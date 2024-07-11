@@ -87,9 +87,9 @@ export default function Cart() {
                       <td>
                         <div
                           className="input-group quantity mt-4"
-                          style={{ width: "100px" }}
+                          style={{ width: "120px" }}
                         >
-                          <div className="input-group-btn">
+                          <div className="input-group-btn ">
                             <button
                               onClick={() =>
                                 decreaseQty(
@@ -97,12 +97,12 @@ export default function Cart() {
                                   cartProduct.quantity
                                 )
                               }
-                              className="btn btn-sm btn-minus rounded-circle bg-light border"
+                              className="btn btn-sm btn-minus btn-outline-primary rounded-circle bg-light border"
                             >
                               <i className="fa fa-minus"></i>
                             </button>
                           </div>
-                          <span className="form-control form-control-sm text-center border-0">
+                          <span className="form-control rounded-2 mx-1 form-control-sm text-center border-0">
                             {cartProduct.quantity || 1}
                           </span>
                           <div className="input-group-btn">
@@ -113,15 +113,15 @@ export default function Cart() {
                                   cartProduct.quantity
                                 )
                               }
-                              className="btn btn-sm btn-plus rounded-circle bg-light border"
+                              className="btn btn-sm btn-outline-primary btn-plus rounded-circle bg-light border"
                             >
                               <i className="fa fa-plus"></i>
                             </button>
                           </div>
                         </div>
                       </td>
-                      <td>
-                        <p className="mb-0 mt-4">{cartProduct.totalPrice} $</p>
+                      <td style={{width:160}}>
+                        <p className="mb-0 text-dark mt-4" style={{width:120}}>{cartProduct.totalPrice} S$</p>
                       </td>
                       <td>
                         <button
@@ -146,18 +146,18 @@ export default function Cart() {
                     </h1>
                     <div className="d-flex justify-content-between mb-4">
                       <h5 className="mb-0 me-4">Subtotal:</h5>
-                      <p className="mb-0">${totalAmount}</p>
+                      <p className="mb-0">S${totalAmount}</p>
                     </div>
                     <div className="d-flex justify-content-between">
                       <h5 className="mb-0 me-4">Shipping</h5>
                       <div>
-                        <p className="mb-0">Flat rate: ${deliverCharge}</p>
+                        <p className="mb-0">Flat rate: S${deliverCharge}</p>
                       </div>
                     </div>
                   </div>
                   <div className="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
                     <h5 className="mb-0 ps-4 me-4">Total</h5>
-                    <p className="mb-0 pe-4">$ {totalAmount + deliverCharge}</p>
+                    <p className="mb-0 pe-4">S$ {totalAmount + deliverCharge}</p>
                   </div>
                   {/*  <button
                     className="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
